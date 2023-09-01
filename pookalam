@@ -1,0 +1,61 @@
+colors=['#8B0000','#D22B2B','#F88379',"#FAA0A0","wheat"]
+colorss=[]
+colorss=colors*9
+
+#background
+r1=rectangle(h=310,w=310,fill="#FFFFF0",stroke="none")
+show(r1)
+
+#outer circle
+cx=circle(r=147,fill="#D2042D")
+cy=circle(r=142,fill="white",stroke="black")
+
+show(cx,cy)
+
+#outer circle design
+def shape(color):
+    p1=point(x=-11,y=85)
+    p2=point(x=11,y=85)
+    p3=point(x=-6,y=75)
+    p4=point(x=6,y=75)
+    s=polygon([p1,p2,p4,p3],fill=color,stroke="none")|rotate(10+(i*10))
+    return(s)
+for i in range(36):
+    s1=shape(colorss[i])|rotate(10)|scale(1.35)
+    show(s1)
+for i in range(36):    
+    s2=shape(colorss[i])|scale(1.5)
+    show(s2)
+for i in range(36):    
+    s3=shape(colorss[i])|rotate(-10)|scale(1.66)
+    show(s3)
+
+#middle circle
+c2=circle(r=95,fill="wheat",stroke="#073305")
+show(c2)
+
+c4 = circle(r=100,fill='white',stroke='none')
+show(c4)
+
+c4=circle(r=98,fill='pink',stroke='red',stroke_width='1')
+show(c4)
+
+e1 = ellipse(w=193,h=95,fill="#D70040",stroke="black")|repeat(10,rotate(30))
+e2 = ellipse(w=180,h=85,fill="	#FFFFF0",stroke="black")|rotate(15)|repeat(10,rotate(30))
+e3 = ellipse(w=160,h=77,fill="#D2042D",stroke="black")|rotate(30)|repeat(10,rotate(30))
+e4 = ellipse(w=145,h=65,fill="maroon",stroke="none")|rotate(15)|repeat(10,rotate(30))
+show(e1,e2,e3,e4)
+e2 = ellipse(w=15, h=10, x=10, y=0, fill="#e80000", stroke="#ff0099", stroke_width=1) | repeat(9, rotate(45))
+
+rs1 = rectangle(w=80, h=80, fill = "white", stroke="none") | repeat(10, rotate(30))
+rs2 = rectangle(w=70, h=70, fill = "#a10000", stroke="none") | repeat(9, rotate(30))
+rs3 = rectangle(w=60, h=60, fill = "#D22B2B", stroke="none") | repeat(9, rotate(60))
+rs4 = rectangle(w=50, h=50, fill = "#F88379", stroke="none") | repeat(9, rotate(30))
+rs41 = rectangle(w=40, h=40, fill = "#FAA0A0", stroke="none") | repeat(9, rotate(60))
+rs42 = rectangle(w=30, h=30, fill = "#fffded", stroke="none") | repeat(9, rotate(30))
+
+c_inner = circle(r=3, fill="yellow", stroke="none")
+c6 = circle(r=1, x=47, y=36, fill="white", stroke="none") | repeat(8, rotate(45))
+r_inner = rectangle(w=2, h=5.7, stroke_width=0.1) | repeat(20, rotate(20))
+
+show(  c6, rs1, rs2, rs3, rs4, rs41, rs42, e2, c_inner, r_inner)
